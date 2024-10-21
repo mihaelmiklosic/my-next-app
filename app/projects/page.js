@@ -10,7 +10,7 @@ const ProjectsPage = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch('http://localhost/7111/wp-json/wp/v2/projects');
+        const res = await fetch('https://7111.generativnagrafika.com/wp-json/wp/v2/projects');
         const data = await res.json();
         setProjects(data);
       } catch (error) {

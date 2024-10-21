@@ -13,7 +13,7 @@ const ProjectPage = ({ params }) => {
     // Fetch project data from WordPress REST API
     const fetchProject = async () => {
       try {
-        const res = await fetch(`http://localhost/7111/wp-json/wp/v2/projects?slug=${slug}`);
+        const res = await fetch(`https://7111.generativnagrafika.com/wp-json/wp/v2/projects?slug=${slug}`);
         const data = await res.json();
         const projectData = data[0];
         setProject(projectData);
@@ -21,7 +21,7 @@ const ProjectPage = ({ params }) => {
         // Fetch all images based on project_images IDs
         if (projectData.acf?.project_images.length > 0) {
           const imageFetches = projectData.acf.project_images.map(async (imageId) => {
-            const imageRes = await fetch(`http://localhost/7111/wp-json/wp/v2/media/${imageId}`);
+            const imageRes = await fetch(`https://7111.generativnagrafika.com/wp-json/wp/v2/media/${imageId}`);
             return imageRes.json();
           });
 
