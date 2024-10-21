@@ -1,0 +1,95 @@
+/* styles/globals.css */
+
+/* Image Container */
+.image-container {
+    margin-top: 48px;
+    margin-bottom: 10px;
+    height: calc(100vh - 200px);
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-container img {
+    height: 100%;
+    width: auto;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .image-container img.active {
+    display: block;
+    opacity: 1;
+  }
+  
+  /* Project Info */
+  .project-info {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 24px;
+    border-top: 1px solid black;
+    transition: transform 0.3s ease-out, height 0.3s ease-out;
+    overflow: hidden;
+    background-color: white;
+    z-index: 10;
+    padding-top: 2px;
+    flex-direction: row;
+  }
+  
+  .news-text {
+    font-size: 15px;
+    line-height: 16px;
+    text-indent: 32px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: justify;
+  }
+  
+  .project-info.expand {
+    height: 250px;
+    transform: translateY(-calc(100vh - 500px));
+  }
+  
+  .project-info-content {
+    display: none;
+    font-size: 15px;
+    line-height: 16px;
+    overflow-y: auto;
+    height: calc(100vh - 230px);
+  }
+  
+  .project-info.expand .project-info-content {
+    display: grid;
+  }
+  
+  .information-text p {
+    text-indent: 32px;
+    font-size: 15px;
+    line-height: 16px;
+  }
+  
+  .project-description {
+    overflow-y: auto;
+    max-height: 100%;
+    padding-bottom: 50px;
+    min-height: 240px;
+  }
+  
+  .mobile-navigation {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .prev-next-link {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+  }
+  
